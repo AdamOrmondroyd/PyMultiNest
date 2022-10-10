@@ -180,6 +180,7 @@ def run(LogLikelihood,
 		if False, use only a single processor.
 	"""
 
+    print(multimodal)
 	if n_params == None:
 		n_params = n_dims
 	if n_clustering_params == None:
@@ -272,6 +273,7 @@ def run(LogLikelihood,
 		verbose, resume, write_output, init_MPI,
 		log_zero, max_iter, loglike, dumper, context]
 	args_converted = [converter(v) for v, converter in zip(args, argtypes)]
+    print(args_converted[1])
 	if use_MPI and lib_mpi is not None:
 		lib_mpi.run(*args_converted)
 		# wait for all processes to return
